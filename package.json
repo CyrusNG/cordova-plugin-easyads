@@ -1,0 +1,23 @@
+{
+  "name": "cordova-plugin-easyads",
+  "version": "0.0.1",
+  "author": "Cyrus NG",
+  "description": "A cordova plugin for EasyAds.",
+  "license": "MIT",
+  "keywords": [ "Cordova", "EasyAds", "GroMore", "Ads" ],
+  "scripts": {
+    "test": "echo test",
+    "build": "echo build"
+  },
+  "cordova": {
+    "id": "cordova-plugin-easyads",
+    "platforms": [ "android" ]
+  },
+  "repository": {
+    "url": "git@github.com:cyrusng/cordova-plugin-easyads.git"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "dependencies": {}
+}

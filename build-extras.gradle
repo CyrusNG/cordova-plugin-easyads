@@ -1,0 +1,59 @@
+buildscript {
+
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }  //国内maven镜像
+        maven { url "https://jitpack.io" }                                     //EasyAds依赖
+        maven { url "https://artifact.bytedance.com/repository/pangle" }       //GroMoreSDK依赖
+        maven { url 'https://developer.huawei.com/repo/' }                     //HuaweiAdsSDK依赖
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }  //国内maven镜像
+        maven { url "https://jitpack.io" }                                     //EasyAds依赖
+        maven { url "https://artifact.bytedance.com/repository/pangle" }       //GroMoreSDK依赖
+        maven { url 'https://developer.huawei.com/repo/' }                     //HuaweiAdsSDK依赖
+    }
+}
+
+android {
+    defaultConfig {
+        // manifestPlaceholders.ALIYUN_PUSH_DEBUG = project.hasProperty('aliyunPushDebug') ? rootProject.ext.aliyunPushDebug : false
+        // manifestPlaceholders.ALIYUN_PUSH_CHANNEL_ID = project.hasProperty('aliyunPushChannelId') ? rootProject.ext.aliyunPushChannelId : 1
+        // manifestPlaceholders.EMAS_ANDROID_APP_KEY = System.props.EMAS_ANDROID_APP_KEY
+        // manifestPlaceholders.EMAS_ANDROID_APP_SECRET = System.props.EMAS_ANDROID_APP_SECRET
+        // manifestPlaceholders.EMAS_MI_APP_ID = System.props.EMAS_MI_APP_ID
+        // manifestPlaceholders.EMAS_MI_APP_KEY = System.props.EMAS_MI_APP_KEY
+        // manifestPlaceholders.EMAS_HUAWEI_APP_ID = System.props.EMAS_HUAWEI_APP_ID
+        // manifestPlaceholders.EMAS_HONOR_APP_ID = System.props.EMAS_HONOR_APP_ID
+        // manifestPlaceholders.EMAS_VIVO_APP_ID = System.props.EMAS_VIVO_APP_ID
+        // manifestPlaceholders.EMAS_VIVO_APP_KEY = System.props.EMAS_VIVO_APP_KEY
+        // manifestPlaceholders.EMAS_OPPO_APP_KEY = System.props.EMAS_OPPO_APP_KEY
+        // manifestPlaceholders.EMAS_OPPO_APP_SECRET = System.props.EMAS_OPPO_APP_SECRET
+        // manifestPlaceholders.EMAS_MEIZU_APP_ID = System.props.EMAS_MEIZU_APP_ID
+        // manifestPlaceholders.EMAS_MEIZU_APP_KEY = System.props.EMAS_MEIZU_APP_KEY
+    }
+}
+
+dependencies {
+    implementation "com.github.bayescom:EasyAds-Android:1.2.1"
+    //穿山甲广告SDK(建议)
+    implementation "com.pangle.cn:mediation-sdk:6.1.2.5"
+    //优量汇广告SDK(建议)
+    implementation "com.qq.e.union:union:4.575.1445"
+    //百度广告SDK（可选）
+    implementation(name: "Baidu_MobAds_SDK_9352", ext: "aar")
+    //快手广告SDK（可选）
+    implementation(name: "kssdk-ad-3363", ext: "aar")
+    //自定义-小米广告SDK
+    implementation(name: "mimo-ad-sdk", ext: "aar")
+    //自定义-小米广告SDK需要额外引入gson
+    implementation 'com.google.code.gson:gson:2.8.5'
+    //自定义-华为广告SDK
+    implementation 'com.huawei.hms:ads-lite:13.4.49.301'
+}

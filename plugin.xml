@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-aliyun-push" version="1.2.3"
+    xmlns="http://apache.org/cordova/ns/plugins/1.0">
+    <name>EasyAds</name>
+    <description>Cordova Plugin for EasyAds</description>
+    <license>MIT License</license>
+    <keywords>Cordova,EasyAds,GroMore,Ads</keywords>
+    <js-module src="www/easyads.js" name="EasyAds">
+        <clobbers target="EasyAds" />
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="EasyAds">
+                <param name="android-package" value="com.easyads.plugin" />
+            </feature>
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <!-- TODO -->
+        </config-file>
+        <source-file src="src/android/**/*.java" target-dir="src/com/easyads/plugin" />
+        <!-- V3.9.0 framework -->
+        <framework src="build-extras.gradle" custom="true" type="gradleReference" />
+        <!-- Need add manually -->
+        <!-- <config-file parent="/*" target="res/values/strings.xml">
+            <string name="aliyun_dialog_title">消息提醒需要通知权限</string>
+            <string name="aliyun_dialog_message">请前往设置打开应用通知权限。</string>
+            <string name="aliyun_dialog_negative_text">忽略</string>
+            <string name="aliyun_dialog_positive_text">设置</string>
+        </config-file> -->
+    </platform>
+</plugin>
